@@ -14,38 +14,38 @@ const projects = [
         image: "Gostar.jpeg",
         desc: "Interactive Website For Gostar Gamming Chanel For Football And Gamming",
         liveLink: "#",
-        detailsLink: "/project/1"
+        detailsLink: "#/project/1"
     },
     {
         id: 2,
         title: "Simple Audio Player",
         image: "Screenshot (155).png",
         desc: "Smple Audio For Listen Music And Songs And Anything Else or Want",
-        detailsLink: "/project/2"
+        detailsLink: "#/project/2"
     },
     {
         id: 3,
         title: "Gostar Gamming Portofolio",
-        image: "/Screenshot (153).png",
+        image: "Screenshot (153).png",
         desc: "Professional Website For Gostar Gamming In Compitition for the best design",
         liveLink: "#",
-        detailsLink: "/project/3"
+        detailsLink: "#/project/3"
     },
     {
         id: 4,
         title: "Crop Care Ai",
-        image: "/Screenshot (154).png",
+        image: "Screenshot (154).png",
         desc: "A platform dedicated to revolutionizing agriculture and simplifying farming for everyone.",
         liveLink: "#",
-        detailsLink: "/project/4"
+        detailsLink: "#/project/4"
     },
     {
         id: 5,
         title: "Crop-Care With Py",
-        image: "/CAi.png",
+        image: "CAi.png",
         desc: "",
         liveLink: "#",
-        detailsLink: "/project/5"
+        detailsLink: "#/project/5"
     },
 ];
 
@@ -53,28 +53,28 @@ const certificates = [
     {
         id: 1,
         issuer: "Coursera",
-        image: "/Certifcate1.jpeg",
+        image: "Certifcate1.jpeg",
         link: "#"
     },
     {
         id: 2,
         title: "React Certificate",
         issuer: "Meta",
-        image: "/Hwawi.png",
+        image: "Hwawi.png",
         link: "#"
     },
     {
         id: 3,
         title: "JavaScript Mastery",
         issuer: "Udemy",
-        image: "/photo - Copy.png",
+        image: "photo - Copy.png",
         link: "#"
     },
     {
         id: 4,
         title: "Python Basics",
         issuer: "Google",
-        image: "/Py.png",
+        image: "Py.png",
         link: "#"
     },
     {
@@ -88,38 +88,38 @@ const certificates = [
         id: 6,
         title: "Backend Development",
         issuer: "IBM",
-        image: "/Info.png",
+        image: "Info.png",
         link: "#"
     },
     {
         id: 7,
         title: "Advanced React",
         issuer: "Meta",
-        image: "/Ai.png",
+        image: "Ai.png",
         link: "#"
     },
     {
         id: 7,
         title: "Advanced React",
         issuer: "Meta",
-        image: "/Ai.png",
+        image: "Ai.png",
         link: "#"
     },
 ];
 
 // --- 1. البيانات (تأكد من وضع الصور في public/icons/) ---
 const allTech = [
-    { name: "HTML", icon: "/html.svg" },
-    { name: "css", icon: "/css.svg" },
-    { name: "JavaScript", icon: "/javascript.svg" },
-    { name: "tailwind", icon: "/tailwind.svg" },
-    { name: "bootstrap", icon: "/bootstrap.svg" },
+    { name: "HTML", icon: "html.svg" },
+    { name: "css", icon: "css.svg" },
+    { name: "JavaScript", icon: "javascript.svg" },
+    { name: "tailwind", icon: "tailwind.svg" },
+    { name: "bootstrap", icon: "bootstrap.svg" },
 
-    { name: "python", icon: "/python.png" },
-    { name: "react", icon: "/reactjs.svg" },
-    { name: "firebase", icon: "/firebase.svg" },
-    { name: "node", icon: "/nodejs.svg" },
-    { name: "material ui", icon: "/MUI.svg" },
+    { name: "python", icon: "python.png" },
+    { name: "react", icon: "reactjs.svg" },
+    { name: "firebase", icon: "firebase.svg" },
+    { name: "node", icon: "nodejs.svg" },
+    { name: "material ui", icon: "MUI.svg" },
 
 
 ];

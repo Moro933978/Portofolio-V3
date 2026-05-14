@@ -44,13 +44,12 @@ const AnimatedBackground = memo(() => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // 3. إعدادات النيورال نتورك (Pink Style)
     const particlesOptions = {
         fpsLimit: 60,
         particles: {
-            color: { value: "#cc00ff" }, // بينك قوي للنقط
+            color: { value: "#cc00ff" },
             links: {
-                color: "#bd4683", // بينك أهدى للخطوط
+                color: "#bd4683",
                 distance: 150,
                 enable: true,
                 opacity: 0.2,
@@ -89,7 +88,7 @@ const AnimatedBackground = memo(() => {
                 <Particles
                     id="tsparticles"
                     options={particlesOptions}
-                    className="absolute inset-0 z-0 blur-[1px] opacity-50 pointer-events-none" />
+                    className="absolute inset-0 z-0 blur-[0.5px] opacity-50 pointer-events-none" />
             )}
 
             <div className="absolute inset-0 z-10 pointer-events-none">

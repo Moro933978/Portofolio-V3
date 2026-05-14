@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 import Loader from "./Components/LoadingScreen";
@@ -17,6 +17,8 @@ function App() {
     return !sessionStorage.getItem("hasSeenWelcome");
   });
 
+  const location = useLocation();
+
   useEffect(() => {
     if (showWelcome) {
       const timer = setTimeout(() => {
@@ -27,7 +29,7 @@ function App() {
     }
   }, [showWelcome]);
 
-  const hideNavbar = location.pathname.startsWith("/project");
+  const isProjectPage = location.pathname.startsWith("/project");
 
   return (
     <HelmetProvider>
@@ -39,10 +41,9 @@ function App() {
             <AnimatedBackground />
           </div>
 
-          {/* 🔥 4. اظهر النافبار فقط لو مش في صفحة البروجكت */}
-          {!hideNavbar && <Navbar />}
+          {!isProjectPage && <Navbar />}
 
-          <div className={`relative z-10 ${hideNavbar ? 'pt-0' : ''}`}>
+          <div className={`relative z-10 ${isProjectPage ? 'pt-0' : ''}`}>
             <Suspense fallback={<div className="min-h-screen bg-[#030014]" />}>
               <Routes>
                 <Route path="/" element={<><Home /><About /><Portfolio /><CommentSection /></>} />
@@ -51,7 +52,7 @@ function App() {
             </Suspense>
           </div>
 
-          <Footer />
+          {!isProjectPage && <Footer />}
         </>
       )}
     </HelmetProvider>

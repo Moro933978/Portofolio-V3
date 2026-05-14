@@ -4,11 +4,11 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeTab, setActiveTab] = useState("Home");
+    const [activeTab, setActiveTab] = useState("home");
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const navLinks = ["Home", "About", "Portofolio", "Contact"];
+    const navLinks = ["home", "about", "portofolio", "contact"];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,7 +28,9 @@ const Navbar = () => {
     useEffect(() => {
         const observers = [];
         navLinks.forEach((link) => {
-            const section = document.getElementById(link.toLowerCase());
+            const sectionId = link.toLowerCase();
+            const section = document.getElementById(sectionId);
+
             if (section) {
                 const observer = new IntersectionObserver(
                     (entries) => {
@@ -36,7 +38,7 @@ const Navbar = () => {
                             setActiveTab(link);
                         }
                     },
-                    { threshold: 0.6 }
+                    { threshold: 0.3 }
                 );
                 observer.observe(section);
                 observers.push(observer);
@@ -44,6 +46,15 @@ const Navbar = () => {
         });
         return () => observers.forEach((obs) => obs.disconnect());
     }, []);
+
+    const scrollToSection = (e, sectionId) => {
+        e.preventDefault();
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+            setIsOpen(false);
+        }
+    };
 
     return (
         <AnimatePresence mode="wait">
@@ -69,6 +80,7 @@ const Navbar = () => {
                                 <a
                                     key={link}
                                     href={`#${link.toLowerCase()}`}
+                                    onClick={(e) => scrollToSection(e, link.toLowerCase())}
                                     className={`relative text-sm font-medium transition-all duration-300 ${activeTab === link ? "text-white" : "text-gray-400 hover:text-purple-400"
                                         }`}
                                 >
@@ -89,6 +101,7 @@ const Navbar = () => {
                         {/* CTA Button */}
                         <a
                             href="#contact"
+                            onClick={(e) => scrollToSection(e, "contact")}
                             className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all active:scale-95 cursor-pointer"
                         >
                             Let's Talk <ArrowUpRight size={18} />
@@ -116,7 +129,7 @@ const Navbar = () => {
                                     <a
                                         key={link}
                                         href={`#${link.toLowerCase()}`}
-                                        onClick={() => setIsOpen(false)}
+                                        onClick={(e) => scrollToSection(e, link.toLowerCase())}
                                         className="text-xl font-semibold text-gray-300 hover:text-white"
                                     >
                                         {link}

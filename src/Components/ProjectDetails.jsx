@@ -29,69 +29,65 @@ const projects = [
     {
         id: 1,
         title: "Gostar Gamming Chanel",
-        image: "/Gostar.jpeg",
-        desc: "The ultimate digital arena where football passion meets elite gaming. This platform delivers high-octane commentary, tactical deep-dives into the latest football simulators, and a cinematic viewing experience for a global audience. Engineered for seamless interaction and community growth.", features: [
-            "Menghadirkan informasi komprehensif tentang PIK-R",
-            "Menampilkan deretan prestasi sebagai bentuk pencapaian",
-            "Memperkenalkan susunan kepengurusan sebagai wajah organisasi"
-        ],
+        image: "Gostar.jpeg",
+        desc: "The ultimate digital arena where football passion meets elite gaming. This platform delivers high-octane commentary, tactical deep-dives into the latest football simulators, and a cinematic viewing experience for a global audience. Engineered for seamless interaction and community growth.",
         tech: ["React.js", "Tailwind CSS", "Framer Motion", "Firebase", "Aos"],
         stats: { techCount: 5, featuresCount: 3 },
         features: ["Bespoke Visual Identity.", "Scalable Media Architecture.", "Watch Football News And Streems."],
-        liveLink: "#", githubLink: "https://github.com/Moro933978"
+        liveLink: "#",
+        githubLink: "https://github.com/Moro933978"
     },
-
     {
         id: 2,
         title: "Simple Audio Player",
-        image: "/Screenshot (155).png",
+        image: "Screenshot (155).png",
         desc: "Professional audio playing application with modern UI controls.",
-        features: ["Play/Pause functionality.", "Playlist management.", "Volume control."],
         tech: ["HTML", "CSS", "JavaScript"],
         stats: { techCount: 3, featuresCount: 3 },
-        liveLink: "#", githubLink: "https://github.com/Moro933978"
+        features: ["Play/Pause functionality.", "Playlist management.", "Volume control."],
+        liveLink: "#",
+        githubLink: "https://github.com/Moro933978"
     },
-
     {
         id: 3,
         title: "Gostar Gamming Portofolio",
-        image: "/Screenshot (153).png",
+        image: "Screenshot (153).png",
         desc: "Professional Website For Gostar Gamming In Compitition for the best design.",
-        features: ["For the best Design. ", "For Montair.", "Degital Criator."],
         tech: ["HTML", "CSS", "JavaScript"],
         stats: { techCount: 3, featuresCount: 3 },
-        liveLink: "#", githubLink: "https://github.com/Moro933978"
+        features: ["For the best Design. ", "For Montair.", "Degital Criator."],
+        liveLink: "#",
+        githubLink: "https://github.com/Moro933978"
     },
-
     {
         id: 4,
         title: "Crop-Care Ai",
-        image: "/Screenshot (154).png",
-        desc: "An advanced AgTech solution leveraging Convolutional Neural Networks (CNN) to revolutionize precision agriculture. By processing real-time biological data through sophisticated diagnostic models, this platform empowers sustainable farming practices with predictive analytics. It transforms complex environmental data into actionable decision intelligence, maximizing crop yield efficiency on a global scale.",
-        features: ["Plant Desise Detect.", "Climate Change Protection. ", "Help Farmers To Grow Up.", "Soli Protection For Plants."],
+        image: "Screenshot (154).png",
+        desc: "An advanced AgTech solution leveraging Convolutional Neural Networks (CNN) to revolutionize precision agriculture. By processing real-time biological data through sophisticated diagnostic models, this platform empowers sustainable farming practices with predictive analytics.",
         tech: ["React", "Tailwind CSS", "Node", "Dashboards"],
         stats: { techCount: 4, featuresCount: 4 },
-        liveLink: "#", githubLink: "https://github.com/Moro933978"
+        features: ["Plant Desise Detect.", "Climate Change Protection. ", "Help Farmers To Grow Up.", "Soli Protection For Plants."],
+        liveLink: "#",
+        githubLink: "https://github.com/Moro933978"
     },
-
     {
         id: 5,
         title: "Crop-Care With PY",
-        image: "/CAi.png",
-        desc: "An early-stage Python prototype designed to validate the core logic of Crop Care AI. This MVP acted as a foundational experiment to explore neural network architectures and plant pathology detection. Please note that this is a non-production version created strictly for research and feasibility testing during the initial development phase of the main project.",
-        features: ["Core Logic Test. ", "Basic Image Loading. ", "Experimental Data.", "Simple Output.", "Early Prototype."],
+        image: "CAi.png",
+        desc: "An early-stage Python prototype designed to validate the core logic of Crop Care AI. This MVP acted as a foundational experiment to explore neural network architectures and plant pathology detection.",
         tech: ["Python"],
         stats: { techCount: 1, featuresCount: 5 },
-        liveLink: "#", githubLink: "https://github.com/Moro933978"
-    },
+        features: ["Core Logic Test. ", "Basic Image Loading. ", "Experimental Data.", "Simple Output.", "Early Prototype."],
+        liveLink: "#",
+        githubLink: "https://github.com/Moro933978"
+    }
 ];
 
 const ProjectDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const project = projects.find((p) => String(p.id) === String(id));
-
+    const project = projects.find((p) => String(p.id) === String(id))
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

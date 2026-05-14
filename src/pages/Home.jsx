@@ -29,17 +29,24 @@ const Hero = () => {
                 setIsDeleting(false);
                 setLoopNum((prev) => prev + 1);
             }
-        }, isDeleting ? 80 : 140); // 🔥 سرعة أهدى
+        }, isDeleting ? 80 : 140);
 
         return () => clearTimeout(timeout);
     }, [text, isDeleting, loopNum]);
 
+    // دالة لتسهيل التنقل السلس (Smooth Scroll) المتوافق مع GitHub Pages
+    const scrollToSection = (e, sectionId) => {
+        e.preventDefault();
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden py-25 " id="home">
 
-            {/* Overlay */}
             <div className="container mx-auto px-6 max-w-6xl relative z-10">
-
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* LEFT */}
@@ -81,20 +88,16 @@ const Hero = () => {
                         <div data-aos="fade-right" data-aos-delay="200"
                             className="flex items-center gap-2 text-xl md:text-2xl text-gray-400">
                             <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold">I am a</span>
-                            <span>
-                                {text}
-                            </span>
-                            <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7]  animate-blink"></span>
-
+                            <span>{text}</span>
+                            <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] animate-blink"></span>
                         </div>
 
                         {/* Description */}
-                        <p data-aos="fade-right" data-aos-delay="300"
-                            className="text-gray-400 max-w-md">
+                        <p data-aos="fade-right" data-aos-delay="300" className="text-gray-400 max-w-md">
                             Specializing in building exceptional digital experiences with modern technologies and AI.
                         </p>
 
-                        {/* Tech */}
+                        {/* Tech Stack */}
                         <div className="hidden sm:flex gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="400">
                             {["React", "Javascript", "Node.js", "Tailwind"].map((tech, i) => (
                                 <span key={i} className="px-4 py-2 text-sm bg-white/5 border border-white/10 rounded-full backdrop-blur-6xl text-gray-400">
@@ -103,9 +106,8 @@ const Hero = () => {
                             ))}
                         </div>
 
-                        {/* Buttons */}
                         <div className="flex flex-nowrap gap-3 pt-4" data-aos="zoom-in" data-aos-delay="500">
-                            <a href="#contact">
+                            <a href="#contact" onClick={(e) => scrollToSection(e, "contact")}>
                                 <button className="group relative w-[160px]">
                                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
                                     <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
@@ -120,7 +122,7 @@ const Hero = () => {
                                 </button>
                             </a>
 
-                            <a href="#portofolio">
+                            <a href="#portofolio" onClick={(e) => scrollToSection(e, "portofolio")}>
                                 <button className="group relative w-[160px]">
                                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
                                     <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
@@ -134,63 +136,34 @@ const Hero = () => {
                                     </div>
                                 </button>
                             </a>
-
                         </div>
 
                         <div data-aos="fade-up" data-aos-delay="600">
                             <SocialLinks />
                         </div>
-
                     </div>
 
                     {/* RIGHT */}
-                    <div data-aos="zoom-in" data-aos-delay="300"
-                        className="relative flex justify-center items-center">
-
+                    <div data-aos="zoom-in" data-aos-delay="300" className="relative flex justify-center items-center">
                         <div className="absolute w-[250px] md:w-[450px] h-[250px] md:h-[450px] bg-purple-600/20 rounded-full blur-[100px] animate-pulse"></div>
-
                         <Orb />
-
                     </div>
-
                 </div>
 
+                {/* Scroll Indicator */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-                    <div className="w-[26px] h-[42px] rounded-full border-2 border-purple-500/30 flex justify-center p-1.5 backdrop-blur-sm">
+                    <div className="w-[26px] h-[42px] rounded-full border-2 border-purple-500/30 flex justify-center p-1.5 backdrop-blur-sm cursor-pointer"
+                        onClick={(e) => scrollToSection(e, "about")}>
                         <motion.div
-                            animate={{
-                                y: [0, 15, 0],
-                                opacity: [0, 1, 0]
-                            }}
-                            transition={{
-                                duration: 1.5,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
+                            animate={{ y: [0, 15, 0], opacity: [0, 1, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                             className="w-1 h-2 bg-purple-500 rounded-full"
                         />
                     </div>
-
-                    <motion.div
-                        animate={{ y: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                        <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            className="text-purple-500/50"
-                        >
-                            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </motion.div>
                 </div>
-
             </div>
         </section>
     );
 };
 
 export default Hero;
-
