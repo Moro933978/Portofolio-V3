@@ -1,0 +1,425 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #030014;
+  --color-primary: #20b2a6;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: var(--bg-color); */
+  color: white;
+  background: var(--bg-color);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  /* background: #030014; */
+  scroll-behavior: smooth !important;
+}
+
+
+@keyframes bgMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 60px 60px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+@keyframes blob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes blob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: #030014;
+  scroll-behavior: smooth !important;
+}
+
+
+@keyframes blob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+
+[data-aos] {
+  will-change: transform, opacity !important;
+}
+
+
+
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 200%;
+  }
+}
+
+.animate-shine {
+  animation: shine 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* من تحت لفوق */
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* من الجنب */
+@keyframes wordFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-word {
+  animation: wordFadeUp 0.9s ease forwards;
+  -webkit-animation: wordFadeUp 0.9s ease forwards;
+}
+
+/* Global Scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Chrome + Edge + Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 0, 20, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #a855f7);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #818cf8, #c084fc);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #250a49 rgba(20, 0, 13, 0.6);
+}
+
+[data-aos] {
+  will-change: transform, opacity !important;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit {
+  animation: orbit linear infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@layer utilities {
+
+  /* الشبكة الخلفية ذات اللون الرمادي الفاتح جداً */
+  .bg-grid-white {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* تأثير الهالة البنفسجية المضيئة خلف العنصر */
+  .bloom-light {
+    filter: blur(40px) opacity(0.5);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply whitespace-nowrap flex items-center gap-2 h-12 px-8 border-2 border-purple-600/80 text-white rounded-xl transition-all duration-300 hover:scale-105 hover:gap-3 hover:border-purple-400 bg-gradient-to-r from-purple-600/10 to-blue-600/10 backdrop-blur-sm;
+  }
+
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+}
+
+.animated-border-btn {
+  /* تأثير الزجاج (Glassmorphism) */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+/* العنصر اللي هيعمل الخط اللي بيلف */
+.animated-border-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent,
+      rgba(168, 85, 247, 0.8),
+      /* اللون البنفسجي بتاعك */
+      transparent 30%);
+  animation: rotate 3s linear infinite;
+  opacity: 0;
+  /* مخفي في الحالة العادية */
+  transition: opacity 0.3s;
+}
+
+/* يظهر البوردر فقط عند الهوفر */
+.animated-border-btn:hover::before {
+  opacity: 1;
+}
+
+/* طبقة داخلية لتغطية نص الزرار والحفاظ على تأثير الزجاج */
+.animated-border-btn::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  /* سمك البوردر */
+  background: #030014;
+  /* نفس لون خلفية الموقع عندك */
+  border-radius: 7px;
+  /* أقل من rounded-lg بشوية */
+  z-index: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+@keyframes blob {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.50;
+  }
+}
+
+.animate-blob {
+  animation: blob 2s infinite ease-in-out;
+  -webkit-animation: blob 2s infinite ease-in-out;
+}
+
+@keyframes border-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-spin {
+  animation: border-spin 3s linear infinite;
+}
