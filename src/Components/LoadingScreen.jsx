@@ -24,7 +24,6 @@ const Loader = () => {
 
 
 
-        // Logic الـ Typewriter اليدوي
 
         let i = 0;
 
@@ -128,11 +127,9 @@ const Loader = () => {
 
 
 
-            {/* 📝 Title Lines */}
 
             <div className="text-center mb-12">
-                {/* السطر الأول - Welcome To My */}
-                <h1 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-tighter flex justify-center gap-x-3 mb-2">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-tighter flex text-justify gap-x-3 mb-2">
                     {line1.map((word, i) => (
                         <motion.span key={i} custom={i} initial="hidden" animate="visible" variants={wordVariants}>
                             {word}
@@ -140,8 +137,7 @@ const Loader = () => {
                     ))}
                 </h1>
 
-                {/* السطر الثاني - Portfolio Website (تم تعديل الوزن والمقاس) */}
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight flex justify-center gap-x-4">
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight flex text-justify gap-x-4">
                     {line2.map((word, i) => (
                         <motion.span
                             key={i}
@@ -159,7 +155,6 @@ const Loader = () => {
 
 
 
-            {/* ⌨️ Manual Typewriter (الرابط المتحرك بدون مكاتب) */}
 
             <div className="flex items-center gap-3 px-6 py-2 rounded-full ">
 

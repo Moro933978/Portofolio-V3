@@ -8,7 +8,7 @@ const Navbar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const navLinks = ["home", "about", "portofolio", "contact"];
+    const navLinks = ["Home", "About", "Portofolio", "Contact"];
 
     useEffect(() => {
         const handleScroll = () => {
