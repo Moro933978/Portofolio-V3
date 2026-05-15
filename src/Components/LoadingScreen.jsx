@@ -127,9 +127,8 @@ const Loader = () => {
 
 
 
-
-            <div className="text-center mb-12">
-                <h1 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-tighter flex text-justify gap-x-3 mb-2">
+            <div className="text-center mb-12 flex flex-col items-center">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-200 tracking-[0.15em] flex justify-center gap-x-2 mb-2 uppercase">
                     {line1.map((word, i) => (
                         <motion.span key={i} custom={i} initial="hidden" animate="visible" variants={wordVariants}>
                             {word}
@@ -137,7 +136,7 @@ const Loader = () => {
                     ))}
                 </h1>
 
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight flex text-justify gap-x-4">
+                <h1 className="text-4xl md:text-6xl font-bold tracking-[0.05em] flex justify-center gap-x-3 uppercase">
                     {line2.map((word, i) => (
                         <motion.span
                             key={i}
@@ -151,9 +150,14 @@ const Loader = () => {
                         </motion.span>
                     ))}
                 </h1>
+
+                <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "80%" }}
+                    transition={{ delay: 1.5, duration: 1 }}
+                    className="h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent mt-4"
+                />
             </div>
-
-
 
 
             <div className="flex items-center gap-3 px-6 py-2 rounded-full ">

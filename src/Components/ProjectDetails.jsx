@@ -104,7 +104,6 @@ const ProjectDetails = () => {
     return (
         <div className="min-h-screen bg-[#030014] text-white pb-20 relative overflow-hidden flex items-center justify-center
         ">
-            {/* --- الخلفية المتوهجة (Blobs & Net) --- */}
             <div className="absolute inset-0 z-10 pointer-events-none">
                 <div
                     className="absolute top-0 -left-4 md:w-96 md:h-96 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-35  "></div>
@@ -128,27 +127,23 @@ const ProjectDetails = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-                    {/* --- العمود الأيسر: المعلومات --- */}
                     <div className="lg:col-span-7 space-y-10">
                         <div className="space-y-4">
-                            <h2 className="text-1xl md:text-6xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
+                            <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
                                 {project.title}
-                            </h2>
+                            </h1>
                             <div className="h-1.5 w-24 bg-gradient-to-r from-purple-500 to-transparent rounded-full shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
                         </div>
 
                         <p className="text-gray-400 text-lg text-justify leading-relaxed max-w-2xl font-medium">{project.desc}</p>
 
-                        {/* الكروت الصغيرة للـ Stats */}
-                        {/* الكروت الصغيرة للـ Stats - الحفاظ على شكل الدائرة في الموبايل */}
+
                         <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md">
-                            {/* Card 1: Total Tech */}
                             <div className="bg-[#161622]/50 border border-white/5 p-3 sm:p-5 rounded-2xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 transition-all hover:border-purple-500/20 group">
-                                {/* الدائرة - تم تثبيتها بـ shrink-0 و aspect-square */}
                                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-500/10 flex items-center justify-center border border-purple-500/20 text-purple-400 group-hover:scale-110 transition-transform aspect-square">
                                     <SVGIcon.Cpu />
                                 </div>
-                                <div className="min-w-0"> {/* منع الكلام إنه يزق الدائرة */}
+                                <div className="min-w-0">
                                     <div className="text-lg sm:text-2xl font-bold text-white tracking-tight leading-none">
                                         {project.stats?.techCount || 0}
                                     </div>
@@ -160,7 +155,6 @@ const ProjectDetails = () => {
 
                             {/* Card 2: Main Features */}
                             <div className="bg-[#161622]/50 border border-white/5 p-3 sm:p-5 rounded-2xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 transition-all hover:border-cyan-500/20 group">
-                                {/* الدائرة - تم تثبيتها بـ shrink-0 و aspect-square */}
                                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 text-cyan-400 group-hover:scale-110 transition-transform aspect-square">
                                     <SVGIcon.Layers />
                                 </div>
@@ -175,7 +169,6 @@ const ProjectDetails = () => {
                             </div>
                         </div>
 
-                        {/* أزرار الأكشن - متوازنة الحجم + Glass Hover + Animated Border */}
                         <div className="flex flex-nowrap items-center gap-3 sm:gap-6 pt-4 overflow-x-auto no-scrollbar">
                             <a
                                 href={project.liveLink}
@@ -205,7 +198,6 @@ const ProjectDetails = () => {
                                 </div>
                             </a>
 
-                            {/* زرار جيت هاب - متناسق مع الحجم الجديد */}
                             <a
                                 href={project.githubLink}
                                 target="_blank"
@@ -217,7 +209,6 @@ const ProjectDetails = () => {
                             </a>
                         </div>
 
-                        {/* التكنولوجيا المستخدمة */}
                         <div className="pt-10 border-t border-white/5">
                             <h3 className="text-gray-500 uppercase tracking-[0.4em] text-[11px] mb-6 font-bold flex items-center gap-2">
                                 <span className="w-6 h-[1px] bg-gray-500"></span> Technologies Used
