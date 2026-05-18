@@ -11,7 +11,7 @@ const projects = [
     {
         id: 1,
         title: "Gostar Gamming Chanel",
-        image: "Gostar.jpeg",
+        image: "Screenshot (170).png",
         desc: "Interactive Website For Gostar Gamming Chanel For Football And Gamming",
         liveLink: "#",
         detailsLink: "#/project/1"

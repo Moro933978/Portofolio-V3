@@ -29,7 +29,7 @@ const projects = [
     {
         id: 1,
         title: "Gostar Gamming Chanel",
-        image: "Gostar.jpeg",
+        image: "Screenshot (170).png",
         desc: "The ultimate digital arena where football passion meets elite gaming. This platform delivers high-octane commentary, tactical deep-dives into the latest football simulators, and a cinematic viewing experience for a global audience. Engineered for seamless interaction and community growth.",
         tech: ["React.js", "Tailwind CSS", "Framer Motion", "Firebase", "Aos"],
         stats: { techCount: 5, featuresCount: 3 },
@@ -154,7 +154,7 @@ const ProjectDetails = () => {
                             </div>
 
                             {/* Card 2: Main Features */}
-                            <div className="bg-[#161622]/50 border border-white/5 p-3 sm:p-5 rounded-2xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 transition-all hover:border-cyan-500/20 group">
+                            <div className="bg-[#161622]/50 border border-white/5 p-3 sm:p-5 rounded-xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 transition-all hover:border-cyan-500/20 group">
                                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 text-cyan-400 group-hover:scale-110 transition-transform aspect-square">
                                     <SVGIcon.Layers />
                                 </div>

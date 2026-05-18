@@ -4,18 +4,13 @@ import { motion } from 'framer-motion';
 const ProjectCard = ({ project }) => {
     return (
         <motion.div
-            // تأثير AOS يدوي باستخدام Framer Motion للطيران من أسفل
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-
-            // تأثير الـ Hover (ارتفاع بسيط)
             whileHover={{ y: -8 }}
-
-            className="group bg-[#161622]/60 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 backdrop-blur-xl relative p-5"
+            className="group bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border-white/10 shadow-2xl rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 relative p-5"
         >
-            {/* 🖼️ حاوية الصورة - مع Padding داخلي زي الصورة بالظبط */}
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
                 <img
                     src={project.image}
@@ -26,7 +21,6 @@ const ProjectCard = ({ project }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c0a21]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
 
-            {/* 📝 Content - نصوص أنحف ومساحات مريحة */}
             <div className="pt-6 px-2">
                 <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-purple-400 transition-colors">
                     {project.title}
@@ -35,7 +29,6 @@ const ProjectCard = ({ project }) => {
                     {project.desc}
                 </p>
 
-                {/* 🔗 Buttons - تصميم الأزرار المودرن */}
                 <div className="flex items-center justify-between mt-auto">
                     <a
                         href={project.liveLink}
@@ -57,7 +50,6 @@ const ProjectCard = ({ project }) => {
                 </div>
             </div>
 
-            {/* توهج بنفسجي خفي بيظهر في الخلفية عند الهوفر */}
             <div className="absolute -inset-px bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
         </motion.div>
     );
