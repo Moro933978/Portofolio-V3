@@ -169,12 +169,12 @@ const ProjectDetails = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-nowrap items-center sm:gap-3 pt-1 overflow-x-auto no-scrollbar">
+                        <div className="flex flex-nowrap items-center sm:gap-5 pt-1 overflow-x-auto no-scrollbar">
                             <a
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative group inline-block p-[1.5px] rounded-xl overflow-hidden transition-all duration-500 active:scale-95 "
+                                className="relative group inline-block rounded-xl overflow-hidden transition-all duration-500 active:scale-95"
                             >
                                 <div className="absolute inset-[-1000%] animate-border-spin bg-white/50000 opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -198,7 +198,7 @@ const ProjectDetails = () => {
                                 href={project.githubLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-3 px-6 sm:px-10 py-3 sm:py-3.5 bg-white/5 border border-white/10 rounded-2xl font-bold hover:bg-white/10 hover:border-white/20 transition-all text-gray-200 active:scale-95 text-sm sm:text-base whitespace-nowrap backdrop-blur-md"
+                                className="flex items-center ml-[3px] justify-center gap-3 px-6 sm:px-10 py-3 sm:py-3.5 bg-white/5 border border-white/10 rounded-2xl font-bold hover:bg-white/10 hover:border-white/20 transition-all text-gray-200 active:scale-95 text-sm sm:text-base whitespace-nowrap backdrop-blur-md"
                             >
                                 <SVGIcon.Github />
                                 Github

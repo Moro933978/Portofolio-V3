@@ -98,7 +98,7 @@ const certificates = [
         link: "#"
     },
     {
-        id: 8, // تعديل الـ id ليكون فريداً بدلاً من تكرار 7
+        id: 8,
         title: "Advanced React",
         issuer: "Meta",
         image: "Ai.png",
@@ -157,9 +157,8 @@ const Portfolio = () => {
                     </p>
                 </div>
 
-                {/* 🎯 بــار الـتـنـقـل الـمـوحد الـجـديـد (شغال للموبايل والكمبيوتر بشكل احترافي) */}
-                <div className="flex justify-center mb-16" data-aos="fade-up" data-aos-duration="1000">
-                    <div className="relative flex items-center p-1.5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl w-full max-w-2xl justify-between overflow-hidden">
+                <div className="flex justify-center mb-16 px-2" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="relative flex items-center py-3 px-4 rounded-3xl bg-[#0f0c22]/50 border border-white/10 backdrop-blur-xl w-full justify-between overflow-hidden min-h-[90px] md:min-h-[110px]">
 
                         {tabs.map((item) => {
                             const Icon = item.icon;
@@ -169,19 +168,20 @@ const Portfolio = () => {
                                 <button
                                     key={item.id}
                                     onClick={() => setActiveTab(item.id)}
-                                    className={`relative z-10 flex items-center justify-center gap-2 flex-1 py-3 px-3 rounded-xl transition-all duration-300 font-medium text-sm md:text-base whitespace-nowrap select-none ${isActive ? "text-white" : "text-gray-400 hover:text-white"
+                                    className={`relative z-10 flex flex-col items-center justify-center gap-2 flex-1 py-4 px-2 mx-2 hover:bg-white/5
+                                    cursor-pointer transition-all duration-300 rounded-2xl transition-all duration-300 font-bold text-xs sm:text-sm md:text-base whitespace-nowrap select-none h-full ${isActive ? "text-white" : "text-gray-400 hover:text-white"
                                         }`}
                                 >
-                                    {/* الخلفية المضيئة المتحركة باستخدام Framer Motion لتطابق التصميم بدقة */}
                                     {isActive && (
                                         <motion.div
                                             layoutId="activeTabGlow"
-                                            className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.25)]"
-                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                            className="absolute inset-0 rounded-2xl bg-[#3c1b4b]/80 border-2 border-[#380d4a] shadow-[0_0_25px_rgba(99,102,241,0.5)]"
+                                            transition={{ type: "spring", stiffness: 350, damping: 28 }}
                                         />
                                     )}
-                                    <Icon size={18} className="relative z-10 opacity-90" />
-                                    <span className="relative z-10">{item.label}</span>
+
+                                    <Icon size={22} className="relative z-10 opacity-90 md:w-6 md:h-6" />
+                                    <span className="relative z-10 tracking-wide">{item.label}</span>
                                 </button>
                             );
                         })}
@@ -189,12 +189,13 @@ const Portfolio = () => {
                     </div>
                 </div>
 
-                {/* 📋 Content Area */}
+                {/*  Content Area */}
                 <div className="min-h-[500px]">
                     <AnimatePresence mode="wait">
-                        {/* 🟣 Projects Grid */}
+                        {/*  Projects Grid */}
                         {activeTab === "projects" && (
                             <motion.div
+                                key="projects-tab"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
@@ -248,7 +249,7 @@ const Portfolio = () => {
                             </motion.div>
                         )}
 
-                        {/* 🟡 Tech Stack */}
+                        {/*  Tech Stack */}
                         {activeTab === "skills" && (
                             <motion.div
                                 key="skills"
@@ -276,23 +277,23 @@ const Portfolio = () => {
                             </motion.div>
                         )}
 
-                        {/* 🔵 Certificates Grid */}
+                        {/*  Certificates Grid */}
                         {activeTab === "certificates" && (
-                            <>
-                                <motion.div
-                                    key="certs"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                                >
+                            <motion.div
+                                key="certs-tab"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                className="flex flex-col items-center w-full"
+                            >
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                                     {certificates.slice(0, visibleCerts).map((cert) => (
                                         <CertificateCard key={cert.id} cert={cert} />
                                     ))}
-                                </motion.div>
+                                </div>
 
                                 {certificates.length > 6 && (
-                                    <div className="flex mt-10">
+                                    <div className="flex mt-10 w-full justify-start">
                                         <button
                                             onClick={() =>
                                                 setVisibleCerts(
@@ -316,7 +317,7 @@ const Portfolio = () => {
                                         </button>
                                     </div>
                                 )}
-                            </>
+                            </motion.div>
                         )}
                     </AnimatePresence>
                 </div>
