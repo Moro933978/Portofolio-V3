@@ -6,12 +6,11 @@ import CertificateCard from "../Components/CertifcateCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const projects = [
     {
         id: 1,
         title: "Gostar Gamming Chanel",
-        image: "Screenshot (170).png",
+        image: "Gostar.jpeg",
         desc: "Interactive Website For Gostar Gamming Chanel For Football And Gamming",
         liveLink: "#",
         detailsLink: "#/project/1"
@@ -99,7 +98,7 @@ const certificates = [
         link: "#"
     },
     {
-        id: 7,
+        id: 8, // تعديل الـ id ليكون فريداً بدلاً من تكرار 7
         title: "Advanced React",
         issuer: "Meta",
         image: "Ai.png",
@@ -107,21 +106,17 @@ const certificates = [
     },
 ];
 
-// --- 1. البيانات (تأكد من وضع الصور في public/icons/) ---
 const allTech = [
     { name: "HTML", icon: "html.svg" },
     { name: "css", icon: "css.svg" },
     { name: "JavaScript", icon: "javascript.svg" },
     { name: "tailwind", icon: "tailwind.svg" },
     { name: "bootstrap", icon: "bootstrap.svg" },
-
     { name: "python", icon: "python.png" },
     { name: "react", icon: "reactjs.svg" },
     { name: "firebase", icon: "firebase.svg" },
     { name: "node", icon: "nodejs.svg" },
     { name: "material ui", icon: "MUI.svg" },
-
-
 ];
 
 const Portfolio = () => {
@@ -140,8 +135,7 @@ const Portfolio = () => {
         : projects.slice(0, 4);
 
     return (
-        <section className="w-full py-20  text-white overflow-hidden" id="portofolio">
-
+        <section className="w-full py-20 text-white overflow-hidden" id="portofolio">
             <div className="max-w-6xl mx-auto px-6 relative">
 
                 {/* 🔥 Title Section */}
@@ -163,9 +157,9 @@ const Portfolio = () => {
                     </p>
                 </div>
 
-                {/* 🔥 MOBILE / TABLET TABS */}
-                <div className="lg:hidden flex justify-center mt-6 mb-10">
-                    <div className="flex gap-4 bg-white/5 border border-white/10 backdrop-blur-xl px-4 py-3 rounded-2xl w-full overflow-x-auto">
+                {/* 🎯 بــار الـتـنـقـل الـمـوحد الـجـديـد (شغال للموبايل والكمبيوتر بشكل احترافي) */}
+                <div className="flex justify-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="relative flex items-center p-1.5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl w-full max-w-2xl justify-between overflow-hidden">
 
                         {tabs.map((item) => {
                             const Icon = item.icon;
@@ -175,50 +169,27 @@ const Portfolio = () => {
                                 <button
                                     key={item.id}
                                     onClick={() => setActiveTab(item.id)}
-                                    className={`flex items-center gap-2 px-4 py-2 rounded-xl whitespace-nowrap transition ${isActive
-                                        ? "bg-purple-600/30 text-white"
-                                        : "text-gray-400 hover:text-white"
+                                    className={`relative z-10 flex items-center justify-center gap-2 flex-1 py-3 px-3 rounded-xl transition-all duration-300 font-medium text-sm md:text-base whitespace-nowrap select-none ${isActive ? "text-white" : "text-gray-400 hover:text-white"
                                         }`}
                                 >
-                                    <Icon size={18} />
-                                    <span className="text-sm">{item.label}</span>
-                                </button>
-                            );
-                        })}
-
-                    </div>
-                </div>
-
-                {/* 🔥 SIDEBAR (Desktop only) */}
-                <div className="hidden lg:flex absolute left-[-90px] top-72 -translate-y-1/2">
-                    <div className="flex flex-col items-center gap-6 p-4 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
-
-                        {tabs.map((item) => {
-                            const Icon = item.icon;
-                            const isActive = activeTab === item.id;
-
-                            return (
-                                <button
-                                    key={item.id}
-                                    onClick={() => setActiveTab(item.id)}
-                                    className="relative group p-3 rounded-xl transition"
-                                >
+                                    {/* الخلفية المضيئة المتحركة باستخدام Framer Motion لتطابق التصميم بدقة */}
                                     {isActive && (
-                                        <div className="absolute inset-0 bg-purple-600/30 rounded-xl blur-md"></div>
+                                        <motion.div
+                                            layoutId="activeTabGlow"
+                                            className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.25)]"
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
                                     )}
-
-                                    <Icon className="relative z-10 text-gray-400 group-hover:text-white" size={22} />
-
-                                    <span className="absolute left-full ml-4 px-3 py-1.5 bg-black/80 border border-white/10 rounded-lg text-xs opacity-0 group-hover:opacity-100 transition">
-                                        {item.label}
-                                    </span>
+                                    <Icon size={18} className="relative z-10 opacity-90" />
+                                    <span className="relative z-10">{item.label}</span>
                                 </button>
                             );
                         })}
+
                     </div>
                 </div>
 
-                {/* 🔥 Content Area */}
+                {/* 📋 Content Area */}
                 <div className="min-h-[500px]">
                     <AnimatePresence mode="wait">
                         {/* 🟣 Projects Grid */}
@@ -230,7 +201,6 @@ const Portfolio = () => {
                                 transition={{ duration: 0.5 }}
                                 className="flex flex-col items-center"
                             >
-                                {/* الحاوية الخاصة بالكروت */}
                                 <motion.div
                                     layout
                                     className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto w-full"
@@ -251,7 +221,6 @@ const Portfolio = () => {
                                     </AnimatePresence>
                                 </motion.div>
 
-                                {/* 🔥 الزرار - محاذي لأقصى اليسار بالنسبة للكروت */}
                                 {projects.length > 4 && (
                                     <motion.div
                                         layout
@@ -279,7 +248,7 @@ const Portfolio = () => {
                             </motion.div>
                         )}
 
-                        {/*  Tech Stack */}
+                        {/* 🟡 Tech Stack */}
                         {activeTab === "skills" && (
                             <motion.div
                                 key="skills"
@@ -301,16 +270,15 @@ const Portfolio = () => {
                                                 {tech.name}
                                             </h3>
                                         </div>
-                                        {/* Background Glow */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
                                     </div>
                                 ))}
                             </motion.div>
                         )}
 
+                        {/* 🔵 Certificates Grid */}
                         {activeTab === "certificates" && (
                             <>
-                                {/* 🟣 Grid */}
                                 <motion.div
                                     key="certs"
                                     initial={{ opacity: 0, y: 20 }}
@@ -323,7 +291,6 @@ const Portfolio = () => {
                                     ))}
                                 </motion.div>
 
-                                {/* 🔥 زرار واحد بس تحت */}
                                 {certificates.length > 6 && (
                                     <div className="flex mt-10">
                                         <button
@@ -333,20 +300,15 @@ const Portfolio = () => {
                                                 )
                                             }
                                             className="relative flex items-center gap-2 px-4 py-2 rounded-md text-white font-semibold 
-    bg-white/5 border border-white/10 backdrop-blur-xl
-    hover:bg-white/10 hover:border-purple-500/40
-    transition-all duration-300 hover:scale-105
-    shadow-lg overflow-hidden group"
+                                    bg-white/5 border border-white/10 backdrop-blur-xl
+                                    hover:bg-white/10 hover:border-purple-500/40
+                                    transition-all duration-300 hover:scale-105
+                                    shadow-lg overflow-hidden group"
                                         >
-                                            {/* Glow */}
                                             <span className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
-
-                                            {/* Text */}
                                             <span className="relative z-10 text-sm">
                                                 {visibleCerts === certificates.length ? "Show Less" : "Show More"}
                                             </span>
-
-                                            {/* Arrow */}
                                             <ChevronDown
                                                 className={`relative z-10 w-5 h-5 transition-transform duration-300 ${visibleCerts === certificates.length ? "rotate-180" : "rotate-0"
                                                     }`}

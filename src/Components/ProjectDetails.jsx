@@ -29,7 +29,7 @@ const projects = [
     {
         id: 1,
         title: "Gostar Gamming Chanel",
-        image: "Screenshot (170).png",
+        image: "Gostar.jpeg",
         desc: "The ultimate digital arena where football passion meets elite gaming. This platform delivers high-octane commentary, tactical deep-dives into the latest football simulators, and a cinematic viewing experience for a global audience. Engineered for seamless interaction and community growth.",
         tech: ["React.js", "Tailwind CSS", "Framer Motion", "Firebase", "Aos"],
         stats: { techCount: 5, featuresCount: 3 },
@@ -135,11 +135,11 @@ const ProjectDetails = () => {
                             <div className="h-1.5 w-24 bg-gradient-to-r from-purple-500 to-transparent rounded-full shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
                         </div>
 
-                        <p className="text-gray-400 text-lg text-justify leading-relaxed max-w-2xl font-medium">{project.desc}</p>
+                        <p className="text-gray-400 text-lg leading-relaxed max-w-2xl font-medium">{project.desc}</p>
 
 
                         <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md">
-                            <div className="bg-[#161622]/50 border border-white/5 p-3 sm:p-5 rounded-2xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 transition-all hover:border-purple-500/20 group">
+                            <div className="bg-[#161622]/50 border border-white/5 p-3 sm:p-5 rounded-xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 transition-all hover:border-purple-500/20 group">
                                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-500/10 flex items-center justify-center border border-purple-500/20 text-purple-400 group-hover:scale-110 transition-transform aspect-square">
                                     <SVGIcon.Cpu />
                                 </div>
@@ -169,17 +169,15 @@ const ProjectDetails = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-nowrap items-center gap-3 sm:gap-6 pt-4 overflow-x-auto no-scrollbar">
+                        <div className="flex flex-nowrap items-center sm:gap-3 pt-1 overflow-x-auto no-scrollbar">
                             <a
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative group inline-block p-[1.5px] rounded-2xl overflow-hidden transition-all duration-500 active:scale-95 "
+                                className="relative group inline-block p-[1.5px] rounded-xl overflow-hidden transition-all duration-500 active:scale-95 "
                             >
-                                {/* 🔥 البوردر المتحرك */}
                                 <div className="absolute inset-[-1000%] animate-border-spin bg-white/50000 opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                                {/* 🔥 طبقة الجلاس الأساسية */}
                                 <div className="relative flex items-center justify-center gap-3 px-6 sm:px-10 py-3 sm:py-3.5 bg-[#030014]/90 backdrop-blur-3xl rounded-[15px] text-white transition-all duration-300 group-hover:bg-white/10 whitespace-nowrap">
 
                                     <div className="group-hover:text-cyan-400 transition-colors duration-300">
@@ -190,10 +188,8 @@ const ProjectDetails = () => {
                                         Live Demo
                                     </span>
 
-                                    {/* 🔥 اللمعة الداخلية (Glass Effect) */}
                                     <div className="absolute inset-0 rounded-[15px] border border-white/10 pointer-events-none group-hover:border-white/40 group-hover:bg-white/5 transition-all duration-300"></div>
 
-                                    {/* تأثير المسح الضوئي عند الهوفر */}
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                                 </div>
                             </a>
@@ -225,8 +221,8 @@ const ProjectDetails = () => {
 
                     <div className="lg:col-span-5 space-y-8">
                         <div className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-[2.5rem] blur opacity-15 group-hover:opacity-40 transition-opacity duration-700"></div>
-                            <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#161622]/60 backdrop-blur-md shadow-2xl">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-15 group-hover:opacity-40 transition-opacity duration-700"></div>
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/60 backdrop-blur-md shadow-2xl">
                                 <img src={project.image} alt={project.title} className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105" />
                                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/30 via-black/40 to-transparent">
                                     <h2 className="text-xl font-bold text-gray-200 tracking-tight">{project.title} Preview</h2>
@@ -234,7 +230,7 @@ const ProjectDetails = () => {
                             </div>
                         </div>
 
-                        <div className="bg-[#161622]/50 border border-white/10 p-10 rounded-[2.5rem] backdrop-blur-xl relative overflow-hidden group">
+                        <div className="bg-[#161622]/50 border border-white/10 p-10 rounded-2xl backdrop-blur-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-3xl -z-10 group-hover:bg-purple-500/10 transition-colors duration-500"></div>
                             <div className="flex items-center gap-3 mb-8 pb-4 border-b border-white/5">
                                 <SVGIcon.Star className="text-yellow-500 fill-yellow-500/20" />
@@ -243,7 +239,7 @@ const ProjectDetails = () => {
                             <ul className="space-y-6">
                                 {project.features?.map((feature, index) => (
                                     <li key={index} className="flex items-start gap-4 text-gray-400 group/item">
-                                        <div className="mt-2.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,1)] group-hover/item:scale-125 transition-all duration-300"></div>
+                                        <div className="mt-2.5 w-2 h-2 rounded-xl bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,1)] group-hover/item:scale-125 transition-all duration-300"></div>
                                         <span className="text-[15px] leading-relaxed group-hover/item:text-white transition-colors font-medium">
                                             {feature}
                                         </span>
