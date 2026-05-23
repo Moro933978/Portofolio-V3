@@ -39,14 +39,14 @@ const projects = [
     },
     {
         id: 2,
-        title: "Simple Audio Player",
-        image: "Screenshot (155).png",
-        desc: "Professional audio playing application with modern UI controls.",
+        title: "QR Code Generator",
+        image: "QRCode.png",
+        desc: "QR Code Generator is a responsive, modern web-based application built using clean HTML, CSS, and vanilla JavaScript. Inspired by sleek, dark-themed user interfaces, it features a stunning glassmorphic design that utilizes rich background blurs, ambient glowing gradients, and sharp custom SVG icons to deliver a premium user experience.The tool leverages a high- performance JavaScript library to instantly transform any plain text, credentials, or URLs into high - quality QR codes in real time.Beyond generation, the app is fully equipped with advanced operational features: a dedicated dynamic download pipeline that packages and exports the generated asset into a crisp.png file, and an implementation of the Web Share API to enable seamless, native file - sharing directly to mobile apps and social channels",
         tech: ["HTML", "CSS", "JavaScript"],
         stats: { techCount: 3, featuresCount: 3 },
-        features: ["Play/Pause functionality.", "Playlist management.", "Volume control."],
-        liveLink: "#",
-        githubLink: "https://github.com/Moro933978"
+        features: ["Real-Time QR Generation: Instantly converts any typed text.", "One-Click Smart Download: Automatically captures the generated canvas element.", "Glassmorphic Card Design: Features a premium frosted-glass."],
+        liveLink: "https://moro933978.github.io/QR-Code/",
+        githubLink: "https://github.com/Moro933978/QR-Code"
     },
     {
         id: 3,
@@ -87,7 +87,8 @@ const ProjectDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const project = projects.find((p) => String(p.id) === String(id))
+    const project = projects.find((p) => String(p.id) === String(id));
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -102,18 +103,14 @@ const ProjectDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#030014] text-white pb-20 relative overflow-hidden flex items-center justify-center
-        ">
+        <div className="min-h-screen bg-[#030014] text-white pb-20 relative overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0 z-10 pointer-events-none">
-                <div
-                    className="absolute top-0 -left-4 md:w-96 md:h-96 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-35  "></div>
-                <div
-                    className="absolute top-0 -right-4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-30  hidden sm:block"></div>
-                <div
-                    className="absolute -bottom-8 left-[-40%] md:left-20 w-96 h-96 bg-[#FF2E63] rounded-full mix-blend-multiply filter blur-[128px] opacity-30  "></div>
+                <div className="absolute top-0 -left-4 md:w-96 md:h-96 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-35"></div>
+                <div className="absolute top-0 -right-4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 hidden sm:block"></div>
+                <div className="absolute -bottom-8 left-[-40%] md:left-20 w-96 h-96 bg-[#FF2E63] rounded-full mix-blend-multiply filter blur-[128px] opacity-30"></div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-6 pt-10  relative z-10">
+            <div className="max-w-6xl mx-auto px-6 pt-10 relative z-10">
                 {/* --- Header --- */}
                 <div className="flex items-center justify-between mb-12">
                     <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group bg-white/5 px-4 py-2 rounded-lg border border-white/5 backdrop-blur-md">
@@ -126,7 +123,6 @@ const ProjectDetails = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
                     <div className="lg:col-span-7 space-y-10">
                         <div className="space-y-4">
                             <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
@@ -136,7 +132,6 @@ const ProjectDetails = () => {
                         </div>
 
                         <p className="text-gray-400 text-lg leading-relaxed max-w-2xl font-medium">{project.desc}</p>
-
 
                         <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md">
                             <div className="bg-[#161622]/50 border border-white/5 p-3 sm:p-5 rounded-xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 transition-all hover:border-purple-500/20 group">
@@ -169,39 +164,27 @@ const ProjectDetails = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-nowrap items-center sm:gap-5 pt-1 overflow-x-auto no-scrollbar">
+                        <div className="flex flex-wrap gap-3 md:gap-4">
                             <a
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative group inline-block rounded-xl overflow-hidden transition-all duration-500 active:scale-95"
+                                className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 text-blue-300 rounded-xl transition-all duration-300 border border-blue-500/20 hover:border-blue-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
                             >
-                                <div className="absolute inset-[-1000%] animate-border-spin bg-white/50000 opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                                <div className="relative flex items-center justify-center gap-3 px-6 sm:px-10 py-3 sm:py-3.5 bg-[#030014]/90 backdrop-blur-3xl rounded-[15px] text-white transition-all duration-300 group-hover:bg-white/10 whitespace-nowrap">
-
-                                    <div className="group-hover:text-cyan-400 transition-colors duration-300">
-                                        <SVGIcon.ExternalLink />
-                                    </div>
-
-                                    <span className="text-sm sm:text-base font-bold tracking-wide bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-white group-hover:to-cyan-400 transition-all duration-500">
-                                        Live Demo
-                                    </span>
-
-                                    <div className="absolute inset-0 rounded-[15px] border border-white/10 pointer-events-none group-hover:border-white/40 group-hover:bg-white/5 transition-all duration-300"></div>
-
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                                </div>
+                                <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-blue-600/10 to-purple-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
+                                <SVGIcon.ExternalLink />
+                                <span className="relative font-medium">Live Demo</span>
                             </a>
 
                             <a
                                 href={project.githubLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center ml-[3px] justify-center gap-3 px-6 sm:px-10 py-3 sm:py-3.5 bg-white/5 border border-white/10 rounded-2xl font-bold hover:bg-white/10 hover:border-white/20 transition-all text-gray-200 active:scale-95 text-sm sm:text-base whitespace-nowrap backdrop-blur-md"
+                                className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
                             >
+                                <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-purple-600/10 to-pink-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
                                 <SVGIcon.Github />
-                                Github
+                                <span className="relative font-medium">Github</span>
                             </a>
                         </div>
 
@@ -232,7 +215,7 @@ const ProjectDetails = () => {
 
                         <div className="bg-[#161622]/50 border border-white/10 p-10 rounded-2xl backdrop-blur-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-3xl -z-10 group-hover:bg-purple-500/10 transition-colors duration-500"></div>
-                            <div className="flex items-center gap-3 mb-8 pb-4 border-b border-white/5">
+                            <div className="flex items-center gap-3 mb-8 pb-4 border-b border-b-white/5">
                                 <SVGIcon.Star className="text-yellow-500 fill-yellow-500/20" />
                                 <h3 className="text-xl font-bold text-white/90 tracking-tight">Key Features</h3>
                             </div>
@@ -248,7 +231,6 @@ const ProjectDetails = () => {
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

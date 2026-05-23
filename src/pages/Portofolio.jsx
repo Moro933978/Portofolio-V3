@@ -17,9 +17,9 @@ const projects = [
     },
     {
         id: 2,
-        title: "Simple Audio Player",
-        image: "Screenshot (155).png",
-        desc: "Smple Audio For Listen Music And Songs And Anything Else or Want",
+        title: "QR Code Generator",
+        image: "QRCode.png",
+        desc: "An elegant, glassmorphic web app that instantly converts text or URLs into QR codes, featuring quick downloading and native sharing.",
         detailsLink: "#/project/2"
     },
     {
@@ -168,14 +168,14 @@ const Portfolio = () => {
                                 <button
                                     key={item.id}
                                     onClick={() => setActiveTab(item.id)}
-                                    className={`relative z-10 flex flex-col items-center justify-center gap-2 flex-1 py-4 px-2 mx-2 hover:bg-white/5
-                                    cursor-pointer transition-all duration-300 rounded-2xl transition-all duration-300 font-bold text-xs sm:text-sm md:text-base whitespace-nowrap select-none h-full ${isActive ? "text-white" : "text-gray-400 hover:text-white"
+                                    className={`relative z-10 flex flex-col items-center justify-center gap-2 flex-1 py-2 px-2 mx-2 hover:bg-white/5
+    cursor-pointer transition-all duration-300 rounded-2xl font-bold text-xs sm:text-sm md:text-base whitespace-nowrap select-none h-full ${isActive ? "text-white" : "text-gray-400 hover:text-white"
                                         }`}
                                 >
                                     {isActive && (
                                         <motion.div
                                             layoutId="activeTabGlow"
-                                            className="absolute inset-0 rounded-2xl bg-[#3c1b4b]/80 border-2 border-[#380d4a] shadow-[0_0_25px_rgba(99,102,241,0.5)]"
+                                            className="absolute inset-0 rounded-2xl bg-[#2e1065]/60 border-2 border-[#a855f7] shadow-[0_0_25px_rgba(168,85,247,0.6),inset_0_0_15px_rgba(236,72,153,0.2)]"
                                             transition={{ type: "spring", stiffness: 350, damping: 28 }}
                                         />
                                     )}
