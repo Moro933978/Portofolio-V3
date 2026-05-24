@@ -20,6 +20,7 @@ const projects = [
         title: "QR Code Generator",
         image: "QRCode.png",
         desc: "An elegant, glassmorphic web app that instantly converts text or URLs into QR codes, featuring quick downloading and native sharing.",
+        liveLink: "https://moro933978.github.io/QR-Code/",
         detailsLink: "#/project/2"
     },
     {
@@ -33,16 +34,16 @@ const projects = [
     {
         id: 4,
         title: "Crop Care Ai",
-        image: "Screenshot (154).png",
+        image: "Screenshot (186).png",
         desc: "A platform dedicated to revolutionizing agriculture and simplifying farming for everyone.",
-        liveLink: "#",
+        liveLink: "https://moro933978.github.io/Crop-Care-Ai/",
         detailsLink: "#/project/4"
     },
     {
         id: 5,
         title: "Crop-Care With Py",
-        image: "CAi.png",
-        desc: "",
+        image: "MVP.png",
+        desc: "A Early Prototype MVP For Crop Care AI With Python",
         liveLink: "#",
         detailsLink: "#/project/5"
     },

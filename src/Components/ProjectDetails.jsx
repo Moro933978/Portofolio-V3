@@ -41,7 +41,7 @@ const projects = [
         id: 2,
         title: "QR Code Generator",
         image: "QRCode.png",
-        desc: "QR Code Generator is a responsive, modern web-based application built using clean HTML, CSS, and vanilla JavaScript. Inspired by sleek, dark-themed user interfaces, it features a stunning glassmorphic design that utilizes rich background blurs, ambient glowing gradients, and sharp custom SVG icons to deliver a premium user experience.The tool leverages a high- performance JavaScript library to instantly transform any plain text, credentials, or URLs into high - quality QR codes in real time.Beyond generation, the app is fully equipped with advanced operational features: a dedicated dynamic download pipeline that packages and exports the generated asset into a crisp.png file, and an implementation of the Web Share API to enable seamless, native file - sharing directly to mobile apps and social channels",
+        desc: "QR Code Generator is a responsive, modern web-based application built using clean HTML, CSS, and vanilla JavaScript. Inspired by sleek, dark-themed user interfaces, it features a stunning glassmorphic design that utilizes rich background blurs, ambient glowing gradients, and sharp custom SVG icons to deliver a premium user experience.The tool leverages a high- performance JavaScript library to instantly transform any plain text, credentials, or URLs into high - quality QR codes in real time.Beyond generation, the app is fully equipped with advanced operational features: a dedicated dynamic download pipeline that packages and exports the generated asset into a crisp.png file.",
         tech: ["HTML", "CSS", "JavaScript"],
         stats: { techCount: 3, featuresCount: 3 },
         features: ["Real-Time QR Generation: Instantly converts any typed text.", "One-Click Smart Download: Automatically captures the generated canvas element.", "Glassmorphic Card Design: Features a premium frosted-glass."],
@@ -62,19 +62,19 @@ const projects = [
     {
         id: 4,
         title: "Crop-Care Ai",
-        image: "Screenshot (154).png",
+        image: "Screenshot (186).png",
         desc: "An advanced AgTech solution leveraging Convolutional Neural Networks (CNN) to revolutionize precision agriculture. By processing real-time biological data through sophisticated diagnostic models, this platform empowers sustainable farming practices with predictive analytics.",
         tech: ["React", "Tailwind CSS", "Node", "Dashboards"],
         stats: { techCount: 4, featuresCount: 4 },
         features: ["Plant Desise Detect.", "Climate Change Protection. ", "Help Farmers To Grow Up.", "Soli Protection For Plants."],
-        liveLink: "#",
-        githubLink: "https://github.com/Moro933978"
+        liveLink: "https://moro933978.github.io/Crop-Care-Ai/",
+        githubLink: "https://github.com/Moro933978/Crop-Care-Ai"
     },
     {
         id: 5,
         title: "Crop-Care With PY",
-        image: "CAi.png",
-        desc: "An early-stage Python prototype designed to validate the core logic of Crop Care AI. This MVP acted as a foundational experiment to explore neural network architectures and plant pathology detection.",
+        image: "MVP.png",
+        desc: "Crop Care AI is a Python-based MVP (Minimum Viable Product) developed as an AI-driven agricultural advisor. The core concept of the project was inspired by a hackathon/competition, aiming to leverage weather forecasts, real-time data, and specific soil metrics to help farmers optimize their crop irrigation schedules. Crucial Note: Please keep in mind that this project is strictly a prototype / MVP created for testing and demonstration purposes.It is not 100 % accurate or production - ready, and should not be used for real - world agricultural decision - making.",
         tech: ["Python"],
         stats: { techCount: 1, featuresCount: 5 },
         features: ["Core Logic Test. ", "Basic Image Loading. ", "Experimental Data.", "Simple Output.", "Early Prototype."],
@@ -207,9 +207,6 @@ const ProjectDetails = () => {
                             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-15 group-hover:opacity-40 transition-opacity duration-700"></div>
                             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/60 backdrop-blur-md shadow-2xl">
                                 <img src={project.image} alt={project.title} className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105" />
-                                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/30 via-black/40 to-transparent">
-                                    <h2 className="text-xl font-bold text-gray-200 tracking-tight">{project.title} Preview</h2>
-                                </div>
                             </div>
                         </div>
 

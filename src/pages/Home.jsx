@@ -34,7 +34,6 @@ const Hero = () => {
         return () => clearTimeout(timeout);
     }, [text, isDeleting, loopNum]);
 
-    // دالة لتسهيل التنقل السلس (Smooth Scroll) المتوافق مع GitHub Pages
     const scrollToSection = (e, sectionId) => {
         e.preventDefault();
         const element = document.getElementById(sectionId);
@@ -67,7 +66,7 @@ const Hero = () => {
 
                         {/* Title */}
                         <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
-                            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+                            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-wide">
                                 <span className="relative inline-block">
                                     <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
                                     <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
