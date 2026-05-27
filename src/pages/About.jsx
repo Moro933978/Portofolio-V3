@@ -191,7 +191,7 @@ const AboutPage = () => {
                             data-aos-duration="1000"
                         >
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                                Bulding The Feuture
+                                With Code
                             </span>
                             <span
                                 className="block mt-2 text-gray-200"
@@ -199,7 +199,7 @@ const AboutPage = () => {
                                 data-aos-duration="1300"
                                 itemProp="name"
                             >
-                                With Code
+                                Bulding The Feuture
                             </span>
                         </h2>
 
@@ -237,7 +237,7 @@ const AboutPage = () => {
                         </div>
 
                         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-                            <a href="#" className="w-full lg:w-auto">
+                            <a href="https://drive.google.com/file/d/1gdVqVXgwUmBZadIdt8cBgUjAE8P_e_xa/view?usp=drive_link" className="w-full lg:w-auto">
                                 <button
                                     data-aos="fade-up"
                                     data-aos-duration="800"

@@ -128,7 +128,7 @@ const Loader = () => {
 
 
             <div className="text-center mb-12 flex flex-col items-center">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-200 tracking-[0.15em] flex justify-center gap-x-2 mb-2 uppercase">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-200 tracking-[0.15em] flex justify-center gap-x-2 mb-[5px] uppercase">
                     {line1.map((word, i) => (
                         <motion.span key={i} custom={i} initial="hidden" animate="visible" variants={wordVariants}>
                             {word}
@@ -136,7 +136,7 @@ const Loader = () => {
                     ))}
                 </h1>
 
-                <h1 className="text-4xl md:text-6xl font-bold tracking-[0.05em] flex justify-center gap-x-3 uppercase">
+                <h1 className="text-3xl md:text-5xl font-bold tracking-[0.05em] flex justify-center gap-x-3 uppercase">
                     {line2.map((word, i) => (
                         <motion.span
                             key={i}

@@ -28,7 +28,7 @@ const SVGIcon = {
 const projects = [
     {
         id: 1,
-        title: "Gostar Gamming Chanel",
+        title: "Gostar Chanel",
         image: "Gostar.jpeg",
         desc: "The ultimate digital arena where football passion meets elite gaming. This platform delivers high-octane commentary, tactical deep-dives into the latest football simulators, and a cinematic viewing experience for a global audience. Engineered for seamless interaction and community growth.",
         tech: ["React.js", "Tailwind CSS", "Framer Motion", "Firebase", "Aos"],
@@ -50,7 +50,7 @@ const projects = [
     },
     {
         id: 3,
-        title: "Gostar Gamming Portofolio",
+        title: "Gostar Portofolio",
         image: "Screenshot (153).png",
         desc: "Professional Website For Gostar Gamming In Compitition for the best design.",
         tech: ["HTML", "CSS", "JavaScript"],
@@ -103,17 +103,20 @@ const ProjectDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#030014] text-white pb-20 relative overflow-hidden flex items-center justify-center">
-            <div className="absolute inset-0 z-10 pointer-events-none">
-                <div className="absolute top-0 -left-4 md:w-96 md:h-96 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-35"></div>
-                <div className="absolute top-0 -right-4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 hidden sm:block"></div>
-                <div className="absolute -bottom-8 left-[-40%] md:left-20 w-96 h-96 bg-[#FF2E63] rounded-full mix-blend-multiply filter blur-[128px] opacity-30"></div>
+        <div className="min-h-screen bg-[#030014] text-white pb-20 relative overflow-hidden flex flex-col items-center justify-center">
+
+            <div className="fixed inset-0">
+                <div className="absolute -inset-[10px] opacity-20">
+                    <div className="absolute top-0 -left-4 w-72 md:w-96 h-72 md:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+                    <div className="absolute top-0 -right-4 w-72 md:w-96 h-72 md:h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+                    <div className="absolute -bottom-8 left-20 w-72 md:w-96 h-72 md:h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+                </div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-6 pt-10 relative z-10">
-                {/* --- Header --- */}
-                <div className="flex items-center justify-between mb-12">
-                    <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group bg-white/5 px-4 py-2 rounded-lg border border-white/5 backdrop-blur-md">
+            <div className="max-w-7xl w-full mx-auto px-6 pt-10 relative z-10">
+                {/* --- Header (Fade In Animation) --- */}
+                <div className="flex items-center justify-between mb-12 animate-fadeIn">
+                    <button onClick={() => navigate(-1)} className="cursor-pointer flex items-center gap-2 text-gray-400 hover:text-white transition-colors group bg-white/5 px-5 py-3 rounded-lg border border-white/5 backdrop-blur-md">
                         <div className="group-hover:-translate-x-1 transition-transform"><SVGIcon.ArrowLeft /></div>
                         <span className="text-sm font-semibold">Back</span>
                     </button>
@@ -123,7 +126,8 @@ const ProjectDetails = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                    <div className="lg:col-span-7 space-y-10">
+
+                    <div className="lg:col-span-6 space-y-10 animate-slideInLeft">
                         <div className="space-y-4">
                             <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
                                 {project.title}
@@ -169,22 +173,28 @@ const ProjectDetails = () => {
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 text-blue-300 rounded-xl transition-all duration-300 border border-blue-500/20 hover:border-blue-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                                className="group relative inline-flex items-center gap-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
                             >
-                                <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-blue-600/10 to-purple-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                                <SVGIcon.ExternalLink />
-                                <span className="relative font-medium">Live Demo</span>
+                                <div className="absolute inset-0 w-full h-full translate-y-[100%] bg-gradient-to-r from-purple-600/20 to-pink-600/20 transition-transform duration-300 group-hover:translate-y-0" />
+
+                                <span className="relative z-10 flex items-center gap-2">
+                                    <SVGIcon.ExternalLink />
+                                    <span className="font-medium">Live Demo</span>
+                                </span>
                             </a>
 
                             <a
                                 href={project.githubLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                                className="group relative inline-flex items-center gap-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
                             >
-                                <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-purple-600/10 to-pink-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                                <SVGIcon.Github />
-                                <span className="relative font-medium">Github</span>
+                                <div className="absolute inset-0 w-full h-full translate-y-[100%] bg-gradient-to-r from-purple-600/20 to-pink-600/20 transition-transform duration-300 group-hover:translate-y-0" />
+
+                                <span className="relative z-10 flex items-center gap-2">
+                                    <SVGIcon.Github />
+                                    <span className="font-medium">Github</span>
+                                </span>
                             </a>
                         </div>
 
@@ -202,25 +212,24 @@ const ProjectDetails = () => {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-5 space-y-8">
-                        <div className="relative group">
+                    <div className="lg:col-span-6 space-y-8 animate-slideInRight">
+                        <div className="relative group w-full">
                             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-15 group-hover:opacity-40 transition-opacity duration-700"></div>
-                            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/60 backdrop-blur-md shadow-2xl">
-                                <img src={project.image} alt={project.title} className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105" />
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/60 backdrop-blur-md shadow-2xl w-full">
+                                <img src={project.image} alt={project.title} className="w-full h-auto max-h-[500px] object-cover transform transition-transform duration-1000 group-hover:scale-105" />
                             </div>
                         </div>
 
-                        <div className="bg-[#161622]/50 border border-white/10 p-10 rounded-2xl backdrop-blur-xl relative overflow-hidden group">
+                        <div className="bg-[#161622]/50 border border-white/10 p-8 md:p-12 rounded-2xl backdrop-blur-xl relative overflow-hidden group w-full">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-3xl -z-10 group-hover:bg-purple-500/10 transition-colors duration-500"></div>
                             <div className="flex items-center gap-3 mb-8 pb-4 border-b border-b-white/5">
                                 <SVGIcon.Star className="text-yellow-500 fill-yellow-500/20" />
-                                <h3 className="text-xl font-bold text-white/90 tracking-tight">Key Features</h3>
+                                <h3 className="text-2xl font-bold text-white/90 tracking-tight">Key Features</h3>
                             </div>
                             <ul className="space-y-6">
                                 {project.features?.map((feature, index) => (
                                     <li key={index} className="flex items-start gap-4 text-gray-400 group/item">
-                                        <div className="mt-2.5 w-2 h-2 rounded-xl bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,1)] group-hover/item:scale-125 transition-all duration-300"></div>
-                                        <span className="text-[15px] leading-relaxed group-hover/item:text-white transition-colors font-medium">
+                                        <div className="mt-2.5 w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,1)] group-hover/item:scale-125 transition-all duration-300 flex-shrink-0"></div>                                        <span className="text-base md:text-lg leading-relaxed group-hover/item:text-white transition-colors font-medium">
                                             {feature}
                                         </span>
                                     </li>
@@ -228,8 +237,36 @@ const ProjectDetails = () => {
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            <style jsx>{`
+                @keyframes blob {
+                    0% { transform: translate(0px, 0px) scale(1); }
+                    33% { transform: translate(30px, -50px) scale(1.1); }
+                    66% { transform: translate(-20px, 20px) scale(0.9); }
+                    100% { transform: translate(0px, 0px) scale(1); }
+                }
+                .animate-blob { animation: blob 10s infinite; }
+                .animation-delay-2000 { animation-delay: 2s; }
+                .animation-delay-4000 { animation-delay: 4s; }
+                .animate-fadeIn { animation: fadeIn 0.7s ease-out; }
+                .animate-slideInLeft { animation: slideInLeft 0.7s ease-out; }
+                .animate-slideInRight { animation: slideInRight 0.7s ease-out; }
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes slideInLeft {
+                    from { opacity: 0; transform: translateX(-30px); }
+                    to { opacity: 1; transform: translateX(0); }
+                }
+                @keyframes slideInRight {
+                    from { opacity: 0; transform: translateX(30px); }
+                    to { opacity: 1; transform: translateX(0); }
+                }
+            `}</style>
         </div>
     );
 };

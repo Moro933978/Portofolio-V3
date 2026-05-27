@@ -64,13 +64,13 @@ const Navbar = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -120, opacity: 0 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="fixed top-6 left-0 right-0 mx-auto w-[95%] max-w-6xl z-[9999] bg-[#030014]/50"
+                    className="fixed top-6 left-0 right-0 mx-auto w-[95%] max-w-6xl z-[9999] bg-[#030014]/50 rounded-2xl"
                 >
                     <div className="relative flex items-center justify-between px-4 py-2 rounded-2xl border border-purple-500/30  backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.8)]">
 
                         <div className="absolute inset-0 rounded-2xl border border-purple-500/10 pointer-events-none shadow-[inset_0_0_20px_rgba(168,85,247,0.1)]"></div>
 
-                        <h1 className="text-2xl font-bold text-white tracking-tight">
+                        <h1 className="text-xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
                             Omar<span className="text-purple-500">.</span>
                         </h1>
 

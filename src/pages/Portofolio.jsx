@@ -159,7 +159,7 @@ const Portfolio = () => {
                 </div>
 
                 <div className="flex justify-center mb-16 px-2" data-aos="fade-up" data-aos-duration="1000">
-                    <div className="relative flex items-center py-3 px-4 rounded-3xl bg-[#0f0c22]/50 border border-white/10 backdrop-blur-xl w-full justify-between overflow-hidden min-h-[90px] md:min-h-[110px]">
+                    <div className="relative flex items-center p-1.5 md:py-3 md:px-4 rounded-2xl bg-[#0f0c22]/50 border border-white/10 backdrop-blur-xl w-full justify-between overflow-hidden min-h-[75px] md:min-h-[110px]">
 
                         {tabs.map((item) => {
                             const Icon = item.icon;
@@ -169,19 +169,20 @@ const Portfolio = () => {
                                 <button
                                     key={item.id}
                                     onClick={() => setActiveTab(item.id)}
-                                    className={`relative z-10 flex flex-col items-center justify-center gap-2 flex-1 py-2 px-2 mx-2 hover:bg-white/5
-    cursor-pointer transition-all duration-300 rounded-2xl font-bold text-xs sm:text-sm md:text-base whitespace-nowrap select-none h-full ${isActive ? "text-white" : "text-gray-400 hover:text-white"
-                                        }`}
+                                    className={`relative z-10 flex flex-col items-center justify-center gap-1 md:gap-2 flex-1 py-2 px-1
+                    cursor-pointer transition-all duration-300 rounded-2xl font-bold select-none h-full
+                    text-[11px] sm:text-sm md:text-base whitespace-nowrap
+                    ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
                                 >
                                     {isActive && (
                                         <motion.div
                                             layoutId="activeTabGlow"
-                                            className="absolute inset-0 rounded-2xl bg-[#2e1065]/60 border-2 border-[#a855f7] shadow-[0_0_25px_rgba(168,85,247,0.6),inset_0_0_15px_rgba(236,72,153,0.2)]"
+                                            className="absolute inset-0 rounded-2xl bg-[#2e1065]/60 border-2 border-[#a855f7] shadow-[0_0_20px_rgba(168,85,247,0.5),inset_0_0_15px_rgba(236,72,153,0.2)]"
                                             transition={{ type: "spring", stiffness: 350, damping: 28 }}
                                         />
                                     )}
 
-                                    <Icon size={22} className="relative z-10 opacity-90 md:w-6 md:h-6" />
+                                    <Icon className="relative z-10 opacity-90 w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
                                     <span className="relative z-10 tracking-wide">{item.label}</span>
                                 </button>
                             );
