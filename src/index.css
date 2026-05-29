@@ -32,67 +32,6 @@ body {
   scroll-behavior: smooth !important;
 }
 
-
-@keyframes bgMove {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 60px 60px;
-  }
-}
-
-
-
-@keyframes blob {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-blob {
-  animation: blob 8s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-@keyframes blob {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-blob {
-  animation: blob 8s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
 html,
 body {
   overflow-x: hidden;
@@ -125,12 +64,9 @@ body {
   animation-delay: 4s;
 }
 
-
 [data-aos] {
   will-change: transform, opacity !important;
 }
-
-
 
 @keyframes shine {
   from {
@@ -178,7 +114,6 @@ body {
   animation: fadeIn 1s ease forwards;
 }
 
-/* من تحت لفوق */
 @keyframes floatUp {
   0% {
     opacity: 0;
@@ -191,7 +126,6 @@ body {
   }
 }
 
-/* من الجنب */
 @keyframes wordFadeUp {
   0% {
     opacity: 0;
@@ -323,7 +257,6 @@ html {
   position: relative;
 }
 
-/* العنصر اللي هيعمل الخط اللي بيلف */
 .animated-border-btn::before {
   content: "";
   position: absolute;
@@ -343,7 +276,6 @@ html {
   opacity: 1;
 }
 
-/* طبقة داخلية لتغطية نص الزرار والحفاظ على تأثير الزجاج */
 .animated-border-btn::after {
   content: "";
   position: absolute;
@@ -353,59 +285,16 @@ html {
   z-index: 0;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 4s linear infinite;
-}
-
-@keyframes blob {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.25;
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
 
   50% {
-    transform: scale(1.15);
-    opacity: 0.50;
-  }
-}
-
-.animate-blob {
-  animation: blob 2s infinite ease-in-out;
-  -webkit-animation: blob 2s infinite ease-in-out;
-}
-
-@keyframes border-spin {
-  from {
-    transform: rotate(0deg);
+    background-position: 100% 50%;
   }
 
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: 0% 50%;
   }
-}
-
-.animate-border-spin {
-  animation: border-spin 3s linear infinite;
 }

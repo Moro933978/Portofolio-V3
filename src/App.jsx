@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Loader from "./Components/LoadingScreen";
 import Navbar from "./layout/Navbar";
@@ -33,10 +34,29 @@ function App() {
 
   return (
     <HelmetProvider>
-      {showWelcome && <Loader />}
+      <AnimatePresence mode="wait">
+        {showWelcome && (
+          <motion.div
+            key="loading-screen"
+            initial={{ opacity: 1 }}
+            exit={{
+              opacity: 0,
+              filter: "blur(12px)",
+              transition: { duration: 0.8, ease: "easeInOut" }
+            }}
+            className="fixed inset-0 z-[9999] pointer-events-none"
+          >
+            <Loader />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {(!showWelcome || sessionStorage.getItem("hasSeenWelcome")) && (
-        <>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="fixed inset-0 z-0 pointer-events-none">
             <AnimatedBackground />
           </div>
@@ -53,7 +73,7 @@ function App() {
           </div>
 
           {!isProjectPage && <Footer />}
-        </>
+        </motion.div>
       )}
     </HelmetProvider>
   );

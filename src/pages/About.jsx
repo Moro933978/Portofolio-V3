@@ -69,7 +69,8 @@ const ProfileImage = memo(() => (
 ));
 const StatCard = memo(({ icon: Icon, color, borderColor, value, label, description, animation }) => (
     <div data-aos={animation} data-aos-duration={1300} className="relative group h-full">
-        <div className={`relative p-[1px] rounded-2xl bg-gradient-to-r ${borderColor} opacity-60 group-hover:opacity-100 transition-opacity duration-500 h-full`}>
+        <div className={`relative p-[1px] rounded-2xl bg-gradient-to-r ${borderColor} opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:opacity-100
+         group-hover:scale-105 duration-500 h-full`}>
 
             <div className="relative z-10 bg-[#030014]/90 backdrop-blur-xl rounded-[15px] p-6 h-full flex flex-col justify-between overflow-hidden">
 
@@ -239,13 +240,23 @@ const AboutPage = () => {
                         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
                             <a href="https://drive.google.com/file/d/1gdVqVXgwUmBZadIdt8cBgUjAE8P_e_xa/view?usp=drive_link" className="w-full lg:w-auto">
                                 <button
+                                    className="group relative w-full lg:w-auto rounded-2xl p-[1.5px] overflow-hidden cursor-pointer transition-all duration-500 hover:scale-[1.03]"
                                     data-aos="fade-up"
                                     data-aos-duration="800"
-                                    className="animated-border-btn relative overflow-hidden w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-transparent text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg"
                                 >
-                                    <span className="relative z-10 flex items-center gap-2">
-                                        <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
-                                        Download CV
+
+                                    <span className="absolute inset-0 rounded-2xl bg-[linear-gradient(130deg,#7c3aed,#ec4899,#f472b6,#7c3aed)] bg-[length:300%_300%] animate-[pinkPurpleMove_6s_ease_infinite]" />
+
+                                    <span className="absolute inset-0 rounded-2xl blur-xl opacity-40 group-hover:opacity-80 transition-all duration-500 bg-[linear-gradient(130deg,#7c3aed,#ec4899,#f472b6)]" />
+
+                                    <span className="relative z-10 flex items-center justify-center gap-3 px-7 py-3 rounded-[15px] bg-white/5 backdrop-blur-2xl border border-white/10 text-white font-medium">
+
+                                        <FileText className="w-5 h-5 text-pink-300 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110" />
+
+                                        <span className="tracking-wide bg-gradient-to-r from-violet-200 via-pink-200 to-rose-200 bg-clip-text text-transparent">
+                                            Download CV
+                                        </span>
+
                                     </span>
                                 </button>
                             </a>

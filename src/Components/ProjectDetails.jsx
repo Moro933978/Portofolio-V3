@@ -28,12 +28,17 @@ const SVGIcon = {
 const projects = [
     {
         id: 1,
-        title: "Gostar Chanel",
+        title: "Premium Web Bus",
         image: "Gostar.jpeg",
-        desc: "The ultimate digital arena where football passion meets elite gaming. This platform delivers high-octane commentary, tactical deep-dives into the latest football simulators, and a cinematic viewing experience for a global audience. Engineered for seamless interaction and community growth.",
+        desc: `An ultra-premium, production-ready system feature ecosystem designed for next-generation SaaS platforms and modern digital products. The goal was to transform traditional, static "About/ Features" sections into an immersive, highly interactive visual experience that balances absolute minimalist aesthetics with cutting-edge front-end performance.`,
         tech: ["React.js", "Tailwind CSS", "Framer Motion", "Firebase", "Aos"],
         stats: { techCount: 5, featuresCount: 3 },
-        features: ["Bespoke Visual Identity.", "Scalable Media Architecture.", "Watch Football News And Streems."],
+        features: [
+            "Bespoke Visual Identity.",
+            "Scalable Media Architecture.",
+            "Watch Football News And Streams.",
+            "Immersive Cinematic Interactions.",
+        ],
         liveLink: "#",
         githubLink: "https://github.com/Moro933978"
     },

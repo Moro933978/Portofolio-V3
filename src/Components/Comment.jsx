@@ -91,9 +91,10 @@ export default function ContactAndComments() {
 
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
 
-                <div className="lg:col-span-4 space-y-6 backdrop-blur-xl
+                <div className="lg:col-span-4 space-y-6 -z-10
+                    backdrop-blur-xl rounded-3xl shadow-[0_0_50px_-12px_rgba(168,85,247,0.2)] relative
                 " data-aos="fade-right">
-                    <div className="bg-white/5 backdrop-blur-xl border border-purple-500/20 rounded-3xl p-8 shadow-[0_0_50px_-12px_rgba(168,85,247,0.2)]">
+                    <div className="bg-white/5 backdrop-blur-xl border border-purple-500/20 rounded-3xl h-full p-8 shadow-[0_0_50px_-12px_rgba(168,85,247,0.2)]">
                         <h2 className="text-3xl font-bold mb-6 text-purple-400">Information</h2>
 
                         <div className="grid grid-cols-1 gap-3 mb-8">
@@ -125,7 +126,7 @@ export default function ContactAndComments() {
                             <SocialCard
                                 color="text-purple-400"
                                 title="Email"
-                                url="mailto:omar6789123h@gmail.com" // لينك الإيميل بيبدأ بـ mailto
+                                url="mailto:omar6789123h@gmail.com"
                                 icon={<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />}
                             />
                         </div>
@@ -178,14 +179,14 @@ export default function ContactAndComments() {
                             </div>
                         </div>
                         <textarea value={text} onChange={(e) => setText(e.target.value)} required rows="2" placeholder="Write your message..." className="w-full bg-[#160a2c] border border-purple-500/10 rounded-xl py-3 px-4 outline-none focus:border-purple-500 transition-all text-sm" />
-                        <button disabled={isUploading} className="w-full bg-gradient-to-r from-purple-600 to-indigo-700 py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all uppercase tracking-[0.2em] text-[10px]">
+                        <button disabled={isUploading} className="w-full bg-gradient-to-r from-purple-600 to-indigo-700 py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all uppercase tracking-[0.2em] text-[10px] cursor-pointer">
                             {isUploading ? "Uploading..." : "Post Comment"}
                         </button>
                     </form>
 
                     <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar ">
                         {pinnedComment && (
-                            <div className="p-5 rounded-2xl border transition-all bg-purple-600/10 border-purple-500/50 sticky top-0 z-20 backdrop-blur-xl shadow-xl">
+                            <div className="p-5 rounded-2xl border transition-all bg-purple-600/10 border-purple-500/50 z-20 backdrop-blur-xl shadow-xl">
                                 <div className="flex gap-4">
                                     <div className="w-10 h-10 rounded-full bg-purple-900/20 border border-purple-500/20 flex items-center justify-center overflow-hidden">
                                         {pinnedComment.imageUrl

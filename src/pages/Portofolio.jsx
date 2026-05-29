@@ -9,9 +9,9 @@ import "aos/dist/aos.css";
 const projects = [
     {
         id: 1,
-        title: "Gostar Gamming Chanel",
-        image: "Gostar.jpeg",
-        desc: "Interactive Website For Gostar Gamming Chanel For Football And Gamming",
+        title: "Premium Web Bus",
+        image: "Screenshot (192).jpeg",
+        desc: "Developed an ultra-premium, system feature section designed for next-gen SaaS platforms.",
         liveLink: "#",
         detailsLink: "#/project/1"
     },
@@ -158,8 +158,8 @@ const Portfolio = () => {
                     </p>
                 </div>
 
-                <div className="flex justify-center mb-16 px-2" data-aos="fade-up" data-aos-duration="1000">
-                    <div className="relative flex items-center p-1.5 md:py-3 md:px-4 rounded-2xl bg-[#0f0c22]/50 border border-white/10 backdrop-blur-xl w-full justify-between overflow-hidden min-h-[75px] md:min-h-[110px]">
+                <div className="flex justify-center mb-8 px-2" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="relative flex items-center gap-3 p-1.5 md:py-3 md:px-4 rounded-2xl bg-[#0f0c22]/50 border border-white/10 backdrop-blur-xl w-full justify-between overflow-hidden min-h-[75px] md:min-h-[110px]">
 
                         {tabs.map((item) => {
                             const Icon = item.icon;
@@ -170,7 +170,8 @@ const Portfolio = () => {
                                     key={item.id}
                                     onClick={() => setActiveTab(item.id)}
                                     className={`relative z-10 flex flex-col items-center justify-center gap-1 md:gap-2 flex-1 py-2 px-1
-                    cursor-pointer transition-all duration-300 rounded-2xl font-bold select-none h-full
+                    cursor-pointer transition-all duration-300 rounded-2xl font-bold select-none h-full transtion-all duration-300
+                    hover:bg-white/10 hover:border-purple-500/40 
                     text-[11px] sm:text-sm md:text-base whitespace-nowrap
                     ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
                                 >
@@ -206,7 +207,7 @@ const Portfolio = () => {
                             >
                                 <motion.div
                                     layout
-                                    className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto w-full"
+                                    className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto w-full"
                                 >
                                     <AnimatePresence mode="popLayout">
                                         {visibleProjects.map((project) => (
@@ -235,7 +236,7 @@ const Portfolio = () => {
                                bg-white/5 border border-white/10 backdrop-blur-xl
                                hover:bg-white/10 hover:border-purple-500/40
                                transition-all duration-300 hover:scale-105
-                               shadow-lg overflow-hidden group"
+                               shadow-lg overflow-hidden group cursor-pointer"
                                         >
                                             <span className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                             <span className="relative z-10 text-sm">
@@ -288,7 +289,7 @@ const Portfolio = () => {
                                 exit={{ opacity: 0, y: -20 }}
                                 className="flex flex-col items-center w-full"
                             >
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 gap-4 w-full">
                                     {certificates.slice(0, visibleCerts).map((cert) => (
                                         <CertificateCard key={cert.id} cert={cert} />
                                     ))}
@@ -306,7 +307,7 @@ const Portfolio = () => {
                                     bg-white/5 border border-white/10 backdrop-blur-xl
                                     hover:bg-white/10 hover:border-purple-500/40
                                     transition-all duration-300 hover:scale-105
-                                    shadow-lg overflow-hidden group"
+                                    shadow-lg overflow-hidden group cursor-pointer"
                                         >
                                             <span className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
                                             <span className="relative z-10 text-sm">
